@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  const [text, setText] = useState("JavaScript");
+
+  const updateData = () => {
+   if (text === "JavaScript") {
+    setText("React")
+   }
+   else {
+    setText("JavaScript")
+   }
+  }
+  return(
+    <div>
+      <h1>I love {text}</h1>
+      <button onClick={updateData}>Click</button>
+
     </div>
-  );
+  )
 }
 
 export default App;
